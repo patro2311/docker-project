@@ -11,3 +11,4 @@ services:
       POSTGRES_PASSWORD: Cokolada12345
     volumes: 
       - my_postgres:/var/lib/postgresql
+
