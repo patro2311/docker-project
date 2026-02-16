@@ -13,3 +13,8 @@ services:
     environment:
       - POSTGRES_USER=patrik
       - POSTGRES_PASSWORD=cokolada12345
+volumes:
+  drupal-modules:
+  drupal-profiles:
+  drupal-themes:
+  drupal-sites:
