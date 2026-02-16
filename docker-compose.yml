@@ -9,10 +9,9 @@ services:
       - drupal-themes:/var/www/html/themes
       - drupal-sites:/var/www/html/sites
   postgres:
-    image: postgres:latest
-
+    image: postgres
     environment:
-      POSTGRES_USER: patrik
-      POSTGRES_PASSWORD: cokolada12345
-    volumes: 
+      - POSTGRES_USER=patrik
+      - POSTGRES_PASSWORD=cokolada12345
+    volumes:
       - my_postgres:/var/lib/postgresql
