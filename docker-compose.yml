@@ -13,5 +13,3 @@ services:
     environment:
       - POSTGRES_USER=patrik
       - POSTGRES_PASSWORD=cokolada12345
-    volumes:
-      - my_postgres:/var/lib/postgresql
