@@ -2,13 +2,17 @@ services:
   drupal:
     image: drupal:9
     ports: 
-      - 8080:80
+      - "8080:80"
+    volumes:
+      - drupal-modules:/var/www/html/modules
+      - drupal-profiles:/var/www/html/profiles
+      - drupal-themes:/var/www/html/themes
+      - drupal-sites:/var/www/html/sites
   postgres:
     image: postgres:latest
 
     environment:
-      POSTGRES_USER: patrik
-      POSTGRES_PASSWORD: Cokolada12345
+      - POSTGRES_USER: patrik
+      - POSTGRES_PASSWORD: cokolada12345
     volumes: 
       - my_postgres:/var/lib/postgresql
-
