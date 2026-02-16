@@ -1,0 +1,13 @@
+services:
+  drupal:
+    image: drupal:9
+    ports: 
+      - 8080:80
+  postgres:
+    image: postgres:latest
+
+    environment:
+      POSTGRES_USER: patrik
+      POSTGRES_PASSWORD: Cokolada12345
+    volumes: 
+      - my_postgres:/var/lib/postgresql
