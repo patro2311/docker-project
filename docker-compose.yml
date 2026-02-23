@@ -9,10 +9,14 @@ services:
       - drupal-themes:/var/www/html/themes
       - drupal-sites:/var/www/html/sites
   postgres:
-    image: postgres
+    image: mariadb
+    ports:
+      - "3306:3306"
     environment:
-      - POSTGRES_USER=patrik
-      - POSTGRES_PASSWORD=cokolada12345
+      MARIADB_ROOT_PASSWORD: cokolada12345
+      MARIADB_DATABASE: drupal
+      MARIADB_USER: drupal
+      MARIADB_PASSWORD: drupal
 volumes:
   drupal-modules:
   drupal-profiles:
