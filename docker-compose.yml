@@ -9,7 +9,7 @@ services:
       - drupal-themes:/var/www/html/themes
       - drupal-sites:/var/www/html/sites
   postgres:
-    image: mariadb
+    image: mariadb:latest
     ports:
       - "3306:3306"
     environment:
