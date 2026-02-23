@@ -14,9 +14,9 @@ services:
       - "3306:3306"
     environment:
       MARIADB_ROOT_PASSWORD: cokolada12345
-      MARIADB_DATABASE: drupal
-      MARIADB_USER: drupal
-      MARIADB_PASSWORD: drupal
+      # MARIADB_DATABASE: drupal
+      # MARIADB_USER: drupal
+      # MARIADB_PASSWORD: drupal
 volumes:
   drupal-modules:
   drupal-profiles:
