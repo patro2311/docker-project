@@ -1,0 +1,26 @@
+services: 
+  custom-drupal:
+    image: custom-drupal:testing
+    build: .
+    ports: 
+      - "8080:80"
+    volumes:
+      - drupal-modules:/var/www/html/modules
+      - drupal-profiles:/var/www/html/profiles
+      - drupal-themes:/var/www/html/themes
+      - drupal-sites:/var/www/html/sites
+
+  postgres:
+    image: postgres:9.6
+    environment:
+      POSTGRES_USER: patrik
+      POSTGRES_PASSWORD: cokolada12345
+    volumes:
+      - drupal_pastgres_data:/var/lib/postgresql/data
+      
+volumes:
+  drupal-modules:
+  drupal-profiles:
+  drupal-themes:
+  drupal-sites:
+  drupal_pastgres_data:
