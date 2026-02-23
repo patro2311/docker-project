@@ -8,7 +8,7 @@ services:
       - drupal-profiles:/var/www/html/profiles
       - drupal-themes:/var/www/html/themes
       - drupal-sites:/var/www/html/sites
-  postgres:
+  mariadb:
     image: mariadb:latest
     ports:
       - "3306:3306"
