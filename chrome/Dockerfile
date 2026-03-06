@@ -6,7 +6,7 @@ RUN apk add --no-cache \
     vim \
     procps \
     tigervnc \
-    chromium &&
+    chromium
 
 RUN groupadd -g ${USERID} && useradd -u ${USERID} -g ${USERID} -s /bin/sh -m crd
 
