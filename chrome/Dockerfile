@@ -22,7 +22,8 @@ RUN mkdir -p /root/.vnc && \
     chmod 755 /root/.vnc/xstartup && \
     chmod 644 /root/.vnc/config
 
-RUN echo "unset SESSION_MANAGER" > /root/.vnc/xstartup && \
+RUN echo "#!/bin/sh" > /root/.vnc/xstartup && \
+    echo "unset SESSION_MANAGER" > /root/.vnc/xstartup && \
     echo "unset DBUS_SESSION_BUS_ADDRESS" >> /root/.vnc/xstartup && \
     echo "/usr/bin/chromium-browser --disable-dev-shm-usage  --remote-debugging-port=5900 " >> /root/.vnc/xstartup
 
