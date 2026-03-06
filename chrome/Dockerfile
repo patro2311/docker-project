@@ -31,8 +31,10 @@ RUN echo "#!/bin/bash" > /root/.vnc/xstartup && \
 RUN echo "geometry=1920x1200" > /root/.vnc/config && \
     echo "depth=24" >> /root/.vnc/config && \
     echo "localhost=no" >> /root/.vnc/config && \
-    echo "AlwaysShared=yes" >> /root/.vnc/config &&\
+    echo "AlwaysShared" >> /root/.vnc/config &&\
     echo "SecurityTypes=none" >> /root/.vnc/config
+
+ENTRYPOINT ["bin/bash", "-c", "vncserver :1 -fg -localhost no -SecurityTypes None -xstartup ~/.vnc/xstartup"]
 
  # CMD ["bin/bash", "-c", "vncserver :1 -geometry 1920x1200 -listen 0.0.0.0 -rfport 5900"]
 
