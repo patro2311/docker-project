@@ -6,7 +6,8 @@ RUN apk add --no-cache \
     vim \
     procps \
     tigervnc \
-    chromium 
+    chromium \
+    bash
 
 RUN addgroup -g ${USERID} crd && adduser -u ${USERID} -D -G crd crd
 
@@ -31,7 +32,7 @@ RUN echo "geometry=1280x800" > /home/crd/.vnc/config && \
     echo "securitytypes=none" >> /home/crd/.vnc/config
 
 
-ENTRYPOINT ["bin/sh", "-c", "vncserver :1 -fg -listen 0.0.0.0"]
+ENTRYPOINT ["bin/bash", "-c", "vncserver :1 -fg -listen 0.0.0.0"]
 
 
 
