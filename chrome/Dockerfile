@@ -25,9 +25,12 @@ RUN echo "unset SESSION_MANAGER" > /home/crd/.vnc/xstartup && \
     echo "exec /usr/bin/chromium --no-sandbox --disable-dev-shm-usage --remote-debugging-port=9222 " >> /home/crd/.vnc/xstartup
 
 RUN echo "geometry=1280x800" > /home/crd/.vnc/config && \
-    echo "localhost=no" >> /home/crd/.vnc/config
+    echo "localhost=no" >> /home/crd/.vnc/config \
+    echo "alwaysshared=yes" >> /home/crd/.vnc/config \
+    echo "securitytypes=none" >> /home/crd/.vnc/config
 
-CMD ["vncserver", ":1", "-fg", "-listen 0.0.0.0"]
+
+ENTRYPOINT ["vncserver", ":1", "-SecurityTypes:", "None", "-fg", "-listen 0.0.0.0"]
 
 
 
