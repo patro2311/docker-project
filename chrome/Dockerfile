@@ -32,7 +32,7 @@ RUN echo "geometry=1920x1200" > /home/crd/.vnc/config && \
     echo "AlwaysShared=yes" >> /home/crd/.vnc/config &&\
     echo "SecurityTypes=none" >> /home/crd/.vnc/config
 
-ENTRYPOINT ["bin/bash", "-c", "vncserver :1 -fg -listen 0.0.0.0"]
+CMD ["bin/bash", "-c", "vncserver :1 -geometry 1920x1200 -listen 0.0.0.0 -rfport 5900"]
 
 
 
