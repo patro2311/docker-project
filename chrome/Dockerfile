@@ -18,11 +18,12 @@ RUN mkdir -p /home/crd/.vnc && \
     touch /home/crd/.vnc/xstartup && \
     touch /home/crd/.vnc/config && \
     chmod -R 700 /home/crd/.vnc && \
-    chmod +x /home/crd/.vnc/xstartup
+    chmod 755 /home/crd/.vnc/xstartup && \
+    chmod 644 /home/crd/.vnc/config
 
 RUN echo "unset SESSION_MANAGER" > /home/crd/.vnc/xstartup && \
     echo "unset DBUS_SESSION_BUS_ADDRESS" >> /home/crd/.vnc/xstartup && \
-    echo "/usr/bin/chromium --disable-dev-shm-usage --disable-dev-shm-usage --remote-debugging-port=5900 " >> /home/crd/.vnc/xstartup
+    echo "/usr/bin/chromium --disable-dev-shm-usage  --remote-debugging-port=5900 " >> /home/crd/.vnc/xstartup
 
 RUN echo "geometry=1280x800" > /home/crd/.vnc/config && \
     echo "localhost=no" >> /home/crd/.vnc/config && \
