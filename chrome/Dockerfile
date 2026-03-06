@@ -27,7 +27,7 @@ RUN echo "unset SESSION_MANAGER" > /home/crd/.vnc/xstartup && \
 RUN echo "geometry=1280x800" > /home/crd/.vnc/config && \
     echo "localhost=no" >> /home/crd/.vnc/config
 
-ENTRYPOINT ["vncserver", ":1", "-fg", "-listen 0.0.0.0"]]
+# ENTRYPOINT ["vncserver", ":1", "-fg", "-listen 0.0.0.0"]]
 
 
 
