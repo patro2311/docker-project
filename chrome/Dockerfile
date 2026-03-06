@@ -6,8 +6,7 @@ RUN apk add --no-cache \
     vim \
     procps \
     tigervnc \
-    chromium  && \
-    rm -v /tmp/* 
+    chromium 
 
 RUN addgroup -g ${USERID} crd && adduser -u ${USERID} -D -G crd crd
 
