@@ -8,6 +8,6 @@ RUN apk add --no-cache \
     tigervnc \
     chromium
 
-RUN groupadd -g ${USERID} && useradd -u ${USERID} -g ${USERID} -s /bin/sh -m crd
+RUN addgroup -g ${USERID} crd && adduser -u ${USERID} -D -G crd crd
 
 
