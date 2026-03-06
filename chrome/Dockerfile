@@ -18,7 +18,7 @@ RUN mkdir -p /home/crd/.vnc && \
     touch /home/crd/.vnc/xstartup && \
     touch /home/crd/.vnc/config && \
     chmod -R 700 /home/crd/.vnc && \
-    chmod +x /home/crd/.vnc/xstartup && 
+    chmod +x /home/crd/.vnc/xstartup
 
 RUN echo "unset SESSION_MANAGER" > /home/crd/.vnc/xstartup && \
     echo "unset DBUS_SESSION_BUS_ADDRESS" >> /home/crd/.vnc/xstartup && \
