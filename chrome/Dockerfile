@@ -22,7 +22,7 @@ RUN mkdir -p /home/crd/.vnc && \
 
 RUN echo "unset SESSION_MANAGER" > /home/crd/.vnc/xstartup && \
     echo "unset DBUS_SESSION_BUS_ADDRESS" >> /home/crd/.vnc/xstartup && \
-    echo "/usr/bin/chromium --disable-dev-shm-usage --disable-dev-shm-usage --remote-debugging-port=9222 " >> /home/crd/.vnc/xstartup
+    echo "/usr/bin/chromium --disable-dev-shm-usage --disable-dev-shm-usage --remote-debugging-port=5900 " >> /home/crd/.vnc/xstartup
 
 RUN echo "geometry=1280x800" > /home/crd/.vnc/config && \
     echo "localhost=no" >> /home/crd/.vnc/config && \
