@@ -30,7 +30,7 @@ RUN echo "geometry=1280x800" > /home/crd/.vnc/config && \
     echo "securitytypes=none" >> /home/crd/.vnc/config
 
 
-ENTRYPOINT ["vncserver", ":1", "-SecurityTypes:", "None", "-fg", "-listen 0.0.0.0"]
+# ENTRYPOINT ["vncserver", ":1", "-SecurityTypes:", "None", "-fg", "-listen 0.0.0.0"]
 
 
 
