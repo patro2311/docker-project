@@ -11,7 +11,7 @@ RUN apk add --no-cache \
 
 RUN addgroup -g ${USERID} crd && adduser -u ${USERID} -D -G crd crd
 
-USER crd
+ # USER crd
 
 EXPOSE 5900
 
