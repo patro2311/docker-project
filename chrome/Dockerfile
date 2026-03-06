@@ -26,11 +26,11 @@ RUN echo "unset SESSION_MANAGER" > /home/crd/.vnc/xstartup && \
     echo "unset DBUS_SESSION_BUS_ADDRESS" >> /home/crd/.vnc/xstartup && \
     echo "/usr/bin/chromium-browser --disable-dev-shm-usage  --remote-debugging-port=5900 " >> /home/crd/.vnc/xstartup
 
-RUN echo "geometry=1280x800" > /home/crd/.vnc/config && \
+RUN echo "geometry=1920x1200" > /home/crd/.vnc/config && \
+    echo "depth=24" >> /home/crd/.vnc/config && \
     echo "localhost=no" >> /home/crd/.vnc/config && \
-    echo "alwaysshared=yes" >> /home/crd/.vnc/config &&\
-    echo "securitytypes=none" >> /home/crd/.vnc/config
-
+    echo "AlwaysShared=yes" >> /home/crd/.vnc/config &&\
+    echo "SecurityTypes=none" >> /home/crd/.vnc/config
 
 ENTRYPOINT ["bin/bash", "-c", "vncserver :1 -fg -listen 0.0.0.0"]
 
