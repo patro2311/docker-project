@@ -1,0 +1,10 @@
+version: "3"
+services:
+  vote:
+    image: bretfisher/examplevotingapp_vote
+    ports:
+      - 80:80
+    networks:
+      - frontend
+    replicas: 2
+  redis: 
